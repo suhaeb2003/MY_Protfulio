@@ -1597,19 +1597,30 @@
 	<script src="js/jquery.counterup.min.js"></script>
 	<!-- Template main Js -->
 	<script src="js/main.js"></script>
-	<script>
-		var wow = new WOW({});wow.init();
-		/* To Disable Inspect Element */
-		$(document).bind("contextmenu",function(e) {
-		e.preventDefault();
-		});
-
-		$(document).keydown(function(e){
-			if(e.which === 123){
-			return false;
-			}
-		});
-	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    document.onkeydown = function(e) {
+            if (e.ctrlKey && 
+                (e.keyCode === 67 || 
+                 e.keyCode === 86 || 
+                 e.keyCode === 85 || 
+                 e.keyCode === 117)) {
+                return false;
+            } else {
+                return true;
+            }
+    };
+    $(document).keypress("u",function(e) {
+      if(e.ctrlKey)
+      {
+    return false;
+    }
+    else
+    {
+    return true;
+    }
+    });
+    </script>
 	
 </body>
 </html>
